@@ -20,9 +20,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     header('Content-Type:application/json; charset=utf-8');
     if ($conn->query($sql) == true){
-        echo urldecode(json_encode(array("status"=>true)));
+        echo json_encode(array("status"=>true));
     }else{
-        echo urldecode(json_encode(array("status"=>false,"msg"=>"插入失败, 请检查字段属性")));
+        echo json_encode(array("status"=>false,"msg"=>"插入失败, 请检查字段属性"));
     }
     $conn->close();
 
